@@ -199,45 +199,60 @@ test('Berita is clearly marked as a past project', () => {
   assert.doesNotMatch(berita, /모바일에서만 이용 가능/);
 });
 
-test('home nav: no FDE, no SW', () => {
+test('home nav restores classic FDE then SW order with section links', () => {
   const nav = html.match(/<nav class="site-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
   assert.ok(nav, 'homepage site-nav missing');
-  assert.doesNotMatch(nav, />\s*FDE\s*</);
-  assert.doesNotMatch(nav, />\s*SW\s*</);
-  assert.doesNotMatch(nav, /href="\.\/fde\/"/);
-  assert.doesNotMatch(nav, /href="\.\/sw\/"/);
-  for (const label of ['소개', '경력', '글램독', '프로젝트', '기술', '연락처']) {
-    assert.ok(nav.includes(label), `home nav missing section: ${label}`);
+  assert.match(nav, /href="\.\/fde\/"/);
+  assert.match(nav, /href="\.\/sw\/"/);
+  assert.match(nav, />\s*FDE\s*</);
+  assert.match(nav, />\s*SW\s*</);
+  const labels = ['홈', 'FDE', 'SW', '소개', '경력', '글램독', '프로젝트', '기술', '연락처'];
+  let last = -1;
+  for (const label of labels) {
+    const idx = nav.indexOf(`>${label}<`);
+    assert.ok(idx !== -1, `home nav missing: ${label}`);
+    assert.ok(idx > last, `home nav order broken at ${label}`);
+    last = idx;
   }
 });
 
-test('fde page: has section nav, no SW link, no /sw/', () => {
+test('fde page nav keeps FDE active and restores SW cross-track link', () => {
   const fde = readFileSync(new URL('../fde/index.html', import.meta.url), 'utf8');
   assert.ok(existsSync(fileURLToPath(new URL('../fde/index.html', import.meta.url))));
   const nav = fde.match(/<nav class="site-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
   assert.ok(nav, 'fde site-nav missing');
   assert.match(nav, /href="\.\.\/"/);
   assert.match(nav, />홈</);
-  for (const label of ['소개', '경력', '글램독', '프로젝트', '기술', '연락처']) {
-    assert.ok(nav.includes(label), `fde nav missing section: ${label}`);
+  assert.match(nav, /aria-current="page">FDE</);
+  assert.match(nav, /href="\.\.\/sw\/"/);
+  assert.match(nav, />\s*SW\s*</);
+  const labels = ['홈', 'FDE', 'SW', '소개', '경력', '글램독', '프로젝트', '기술', '연락처'];
+  let last = -1;
+  for (const label of labels) {
+    const idx = nav.indexOf(`>${label}<`);
+    assert.ok(idx !== -1, `fde nav missing: ${label}`);
+    assert.ok(idx > last, `fde nav order broken at ${label}`);
+    last = idx;
   }
-  assert.doesNotMatch(nav, />\s*SW\s*</);
-  assert.doesNotMatch(nav, /href="[^"]*\/sw\/?["#]/);
-  assert.doesNotMatch(nav, /\.\.\/sw\//);
 });
 
-test('sw page: has section nav, no FDE link, no /fde/', () => {
+test('sw page nav keeps SW active and restores FDE cross-track link', () => {
   const sw = readFileSync(new URL('../sw/index.html', import.meta.url), 'utf8');
   assert.ok(existsSync(fileURLToPath(new URL('../sw/index.html', import.meta.url))));
   const nav = sw.match(/<nav class="site-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
   assert.ok(nav, 'sw site-nav missing');
   assert.match(nav, /href="\.\.\/"/);
   assert.match(nav, />홈</);
-  for (const label of ['소개', '경력', '글램독', '프로젝트', '기술', '연락처']) {
-    assert.ok(nav.includes(label), `sw nav missing section: ${label}`);
+  assert.match(nav, /aria-current="page">SW</);
+  assert.match(nav, /href="\.\.\/fde\/"/);
+  assert.match(nav, />\s*FDE\s*</);
+  const labels = ['홈', 'FDE', 'SW', '소개', '경력', '글램독', '프로젝트', '기술', '연락처'];
+  let last = -1;
+  for (const label of labels) {
+    const idx = nav.indexOf(`>${label}<`);
+    assert.ok(idx !== -1, `sw nav missing: ${label}`);
+    assert.ok(idx > last, `sw nav order broken at ${label}`);
+    last = idx;
   }
-  assert.doesNotMatch(nav, />\s*FDE\s*</);
-  assert.doesNotMatch(nav, /href="[^"]*\/fde\/?["#]/);
-  assert.doesNotMatch(nav, /\.\.\/fde\//);
 });
 
