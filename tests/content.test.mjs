@@ -190,9 +190,11 @@ test('drawers animate their content and respect reduced motion', () => {
   assert.match(html, /grid-template-rows:\s*1fr/);
 });
 
-test('Berita mini app link identifies its mobile-only availability', () => {
+test('Berita is clearly marked as a past project', () => {
   const berita = article('berita');
-  assert.match(berita, /class="miniapp-entry"/);
-  assert.match(berita, /토스 미니앱 열기/);
-  assert.match(berita, /모바일에서만 이용 가능/);
+  assert.match(berita, /발행했던 뉴스 큐레이션 프로젝트입니다/);
+  assert.match(berita, /운영은 종료했습니다/);
+  assert.match(berita, /운영 종료/);
+  assert.doesNotMatch(berita, /토스 미니앱 열기/);
+  assert.doesNotMatch(berita, /모바일에서만 이용 가능/);
 });
