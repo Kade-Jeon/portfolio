@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CS·고객 전달·이해관계자 조율과 PoC→NIA 도입 경험을 갖춘 Forward Deployed Engineer 포지션 포트폴리오 — 전총명(Kade Jeon)" />
+    <title>전총명 | Forward Deployed Engineer</title>
+    <link rel="stylesheet" href="../position-pages.css" />
+  </head>
+  <body>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <div class="site-nav__inner shell">
+        <a class="brand" href="../">Kade Jeon</a>
+        <ul class="nav-links">
+          <li><a href="../">홈</a></li>
+          <li><a href="../fde/" aria-current="page">FDE</a></li>
+          <li><a href="../sw/">SW</a></li>
+          <li class="hide-sm"><a href="../#about">소개</a></li>
+          <li class="hide-sm"><a href="../#experience">경력</a></li>
+          <li class="hide-sm"><a href="../#projects">프로젝트</a></li>
+          <li><a href="../#contact">연락처</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main id="top">
+      <header class="hero shell">
+        <div>
+          <p class="hero__kicker">Forward Deployed Engineer</p>
+          <h1>
+            현장에서 문제를 듣고<br />
+            <strong>제품으로 닫습니다</strong>
+          </h1>
+          <p class="hero__summary">영업·CS 접점에서 쌓은 이해관계자 조율 경험과, 운영 중 메일 서비스의 구조 개선·관측성 구축·Spring AI PoC(NIA 도입)를 연결하는 FDE를 지향합니다.</p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#fit">포지션 핏</a>
+            <a class="button" href="#proof">근거 사례</a>
+          </div>
+          <div class="chip-row">
+            <span class="chip">Customer delivery</span>
+            <span class="chip">PoC adoption</span>
+            <span class="chip">ELK/APM</span>
+            <span class="chip">TOEIC 835</span>
+          </div>
+        </div>
+        <aside class="hero-panel" aria-label="FDE fit signals">
+          <p class="hero-panel__label">FDE fit signals</p>
+          <ul>
+              <li><strong>CS → 제품</strong><span>13개 CS 채널 대응을 기능·구조 개선으로 연결</span></li>
+              <li><strong>Stakeholder</strong><span>솔루션·해외영업 기반의 요구사항 정리·일정 조율</span></li>
+              <li><strong>PoC → 도입</strong><span>Spring AI PoC가 G-Cloud 채택·NIA 베타 도입</span></li>
+              <li><strong>Observability</strong><span>ELK/APM으로 장애·CS 대응 시간 약 30% 수준으로 단축</span></li>
+          </ul>
+        </aside>
+      </header>
+
+
+      <section id="fit">
+        <div class="shell">
+          <div class="section-head">
+            <h2>왜 Forward Deployed Engineer인가</h2>
+            <p>
+              CS·요구사항 대응에서 출발해 제품 개선으로 이어가는 경로를 밟아 왔습니다.
+              고객 앞단의 문제를 이해하고, 이해관계자를 조율하며, PoC를 실제 도입까지 밀어붙인 경험이 FDE 역할과 맞닿아 있습니다.
+            </p>
+          </div>
+          <div class="card-grid">
+            <article class="card">
+              <h3>CS → 제품 개선</h3>
+              <p>크리니티에서 고객사 13개 CS 채널을 대응하며 운영 이슈 원인을 분석했습니다. 단순 티켓 처리에 그치지 않고, 반복되는 문제를 기능·구조 개선 과제로 전환했습니다.</p>
+              <ul>
+                <li>고객사별 요구사항·버그·예외 케이스 반영</li>
+                <li>레거시 검색·외부 API 등 구조적 병목 개선</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>이해관계자 조율 (영업 경력)</h3>
+              <p>한국학술정보 솔루션영업, 다다무역 해외영업으로 약 4년간 B2B 고객·생산처·유관부서 사이의 요구사항을 정리하고 일정을 조율했습니다.</p>
+              <ul>
+                <li>공공·대학·연구기관 고객 문의/요구사항 대응</li>
+                <li>개발·디자인·CS와 협업해 서비스 개선 진행</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>PoC → NIA 도입</h3>
+              <p>Spring AI 기반 공공 메일 AI 기능 PoC를 설계·구현했고, G-Cloud 공공 클라우드 메일 AI 기능 PoC로 채택되어 한국지능정보사회진흥원(NIA) 베타 운영 환경에 도입되었습니다.</p>
+              <ul>
+                <li>RestTemplate 단일 프롬프트 한계를 ChatClient 구조로 전환</li>
+                <li>RAG·에이전트·Langfuse 확장 가능 구조 설계</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>관측성 · 운영 구조 개선</h3>
+              <p>KISTI 프라이빗 클라우드에 ELK/Fleet/APM을 구축해 VM별 root 접속 로그 확인에서 Kibana 중앙 조회로 전환했습니다. 장애·CS 대응 시간을 기존 대비 약 30% 수준으로 단축했습니다.</p>
+              <ul>
+                <li>Admin/Readonly 권한 분리로 로그 접근 보안 개선</li>
+                <li>APM Slow Query로 SQL 조건 개선</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="proof">
+        <div class="shell">
+          <div class="section-head">
+            <h2>현장 전달을 뒷받침하는 근거</h2>
+            <p>고객 접점, 해외 커뮤니케이션, 도입까지의 실행력을 이력 기준으로 정리했습니다.</p>
+          </div>
+          <div class="proof-grid">
+            <article class="proof">
+              <p class="proof__label">Customer delivery</p>
+              <h3>메일 서비스 고객 요구사항 개발</h3>
+              <p>운영 중 메일 서비스에서 기능 개발, 장애 원인 분석, 외부 API 연동, 검색 개선을 수행했습니다.</p>
+            </article>
+            <article class="proof">
+              <p class="proof__label">Overseas</p>
+              <h3>TOEIC 835 · 해외 경험</h3>
+              <p>TOEIC 835점, 태국 인턴·필리핀 어학·캄보디아 봉사 등 해외 경험을 바탕으로 글로벌 이해관계자와의 소통에 익숙합니다.</p>
+            </article>
+            <article class="proof">
+              <p class="proof__label">Adoption</p>
+              <h3>공공 환경 PoC 채택</h3>
+              <p>회사 Java/Spring 스택을 고려해 Spring AI로 PoC를 구성했고, NIA 베타 환경 도입까지 이어졌습니다.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="path">
+        <div class="shell">
+          <div class="section-head">
+            <h2>고객 접점에서의 경력 경로</h2>
+            <p>영업·운영 지원에서 백엔드 개발로 전향한 흐름이 FDE의 “현장에서 제품을 완성한다”는 역할과 연결됩니다.</p>
+          </div>
+          <div class="timeline">
+            <article>
+              <p class="timeline__meta"><span>2024.05 – 2026.01</span><span>크리니티 · 클라우드개발1팀</span></p>
+              <h3>웹개발자 · 고객사 요구사항·운영 이슈</h3>
+              <p>Java/JSP 메일 서비스 기능 개발·유지보수, 13개 CS 채널 대응, SMS/MMS API 재구현, 결과 내 재검색, ELK/APM, Spring AI PoC를 수행했습니다.</p>
+            </article>
+            <article>
+              <p class="timeline__meta"><span>2021.05 – 2023.03</span><span>한국학술정보 · KISS사업부</span></p>
+              <h3>솔루션영업 · 공공·대학 고객 운영 지원</h3>
+              <p>고객 불편사항을 정리해 유관부서에 전달하고 개선 진행을 관리했으며, 교육·매뉴얼·FAQ 등 서비스 운영을 지원했습니다.</p>
+            </article>
+            <article>
+              <p class="timeline__meta"><span>2018.09 – 2020.08</span><span>다다무역 · 원단영업부</span></p>
+              <h3>해외 바이어 ↔ 국내 생산처 조율</h3>
+              <p>샘플·주문·납기·수정사항을 추적하며 여러 이해관계자 일정을 맞추고 문제 상황을 끝까지 해결하는 경험을 쌓았습니다.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="stack">
+        <div class="shell">
+          <div class="section-head">
+            <h2>현장 전달에 쓰는 도구</h2>
+            <p>고객 환경에 맞춰 기존 스택을 존중하면서도, 관측성과 AI PoC를 현실적으로 붙입니다.</p>
+          </div>
+          <div class="stack-list">
+            <span>Java / Spring</span>
+            <span>Spring AI</span>
+            <span>ELK / Elastic APM</span>
+            <span>Docker</span>
+            <span>RestTemplate / API 연동</span>
+            <span>Linux</span>
+            <span>고객 CS 대응</span>
+            <span>TOEIC 835</span>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="contact" id="contact">
+        <div class="shell contact-panel">
+          <div>
+            <h2>현장과 제품 사이를 잇는 엔지니어를 찾고 계신가요?</h2>
+            <p>고객 앞단의 맥락을 이해하고, 운영 가능한 구조로 PoC를 밀어 넣는 Forward Deployed Engineer로 기여하고 싶습니다.</p>
+          </div>
+          <div class="contact-links">
+            <a href="mailto:zsc0248@naver.com">zsc0248@naver.com</a>
+            <a href="https://github.com/Kade-Jeon?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="../">전체 포트폴리오</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="shell">
+      <span>© 2026 Kade Jeon</span>
+      <a class="text-link" href="../">Home</a>
+    </footer>
+  </body>
+</html>
