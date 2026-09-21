@@ -198,3 +198,30 @@ test('Berita is clearly marked as a past project', () => {
   assert.doesNotMatch(berita, /토스 미니앱 열기/);
   assert.doesNotMatch(berita, /모바일에서만 이용 가능/);
 });
+
+test('site nav does not expose FDE/SW position links', () => {
+  const nav = html.match(/<nav class="site-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
+  assert.ok(nav, 'homepage site-nav missing');
+  assert.doesNotMatch(nav, />\s*FDE\s*</);
+  assert.doesNotMatch(nav, />\s*SW\s*</);
+  assert.doesNotMatch(nav, /href="\.\/fde\/"/);
+  assert.doesNotMatch(nav, /href="\.\/sw\/"/);
+});
+
+test('position pages remain reachable and only link home in top nav', () => {
+  const fde = readFileSync(new URL('../fde/index.html', import.meta.url), 'utf8');
+  const sw = readFileSync(new URL('../sw/index.html', import.meta.url), 'utf8');
+  assert.ok(existsSync(fileURLToPath(new URL('../fde/index.html', import.meta.url))));
+  assert.ok(existsSync(fileURLToPath(new URL('../sw/index.html', import.meta.url))));
+  for (const [name, page] of [['fde', fde], ['sw', sw]]) {
+    const nav = page.match(/<nav class="site-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
+    assert.ok(nav, `${name} site-nav missing`);
+    assert.match(nav, /href="\.\.\/"/);
+    assert.match(nav, />홈</);
+    assert.doesNotMatch(nav, />\s*FDE\s*</);
+    assert.doesNotMatch(nav, />\s*SW\s*</);
+    assert.doesNotMatch(nav, /href="\.\.\/fde\/"/);
+    assert.doesNotMatch(nav, /href="\.\.\/sw\/"/);
+  }
+});
+
