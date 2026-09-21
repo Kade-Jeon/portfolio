@@ -9,7 +9,7 @@
 )
 
 #set text(
-  font: ("Apple SD Gothic Neo", "Noto Sans KR", "Noto Sans CJK KR", "Noto Sans"),
+  font: ("Noto Sans CJK KR", "NanumGothic", "Apple SD Gothic Neo", "Noto Sans KR", "Noto Sans"),
   size: 9pt,
   lang: "ko",
   fill: rgb("#1f2328"),
@@ -335,7 +335,7 @@
 
 #section("Projects", "프로젝트", right_link: "https://kade-jeon.github.io/AIAssistant/")
 
-#text(size: 8.5pt, fill: CM)[개인 프로젝트 2건 — AI 어시스턴트 플랫폼과 토스 미니앱 뉴스레터 베리타]
+#text(size: 8.5pt, fill: CM)[개인 프로젝트 — AI 어시스턴트, 베리타(운영 종료), 글램독(Map·CRM/PMS·Bot)]
 
 #v(0.15cm)
 #text(size: 8pt, fill: CA, weight: "bold")[프로젝트 1 · AI 어시스턴트]
@@ -397,7 +397,7 @@
     radius: 6pt,
     inset: 8pt,
     fill: rgb("#161b22"),
-    image("./images/arch.svg", width: 100%)
+    image("./images/arch-typst.png", width: 100%)
   )
 
   #sublabel("트러블슈팅")
@@ -437,32 +437,30 @@
     columns: (1fr, auto),
     align: (bottom, bottom),
     [#text(size: 11.5pt, weight: "bold")[토스 미니앱 서비스 — Berita]],
-    [#link("https://minion.toss.im/L4OX1Hqz")[
-      #text(size: 7.5pt, fill: CA, weight: "bold")[토스 미니앱 ↗]
-    ]],
+    [#text(size: 7.5pt, fill: CM, weight: "bold")[운영 종료]],
   )
   #v(0.05cm)
-  #text(size: 8pt, fill: CM)[React · TypeScript · Supabase · AppsInToss · Granite · n8n · 2026.04 — 운영 중]
+  #text(size: 8pt, fill: CM)[React · TypeScript · Supabase · AppsInToss · Granite · n8n · 2026.04 — 운영 종료]
   #v(0.08cm)
   #text(size: 8.3pt, fill: CM)[
-    n8n으로 뉴스 후보를 자동 수집하고, 운영자 검수 후 발행하는 semi-automated 뉴스레터 서비스입니다.
+    Gmail과 n8n으로 뉴스 후보를 모으고 운영자가 검수한 뒤 토스 미니앱으로 발행했던 뉴스 큐레이션 프로젝트입니다. 운영은 종료했습니다.
   ]
 
   #v(0.1cm)
   #overview-block("프로젝트 목적", [
-    토스 미니앱으로 운영 중인 뉴스 큐레이션 서비스입니다.
+    토스 미니앱으로 발행했던 뉴스 큐레이션 서비스입니다.
     #strong[n8n]으로 Gmail 기반 뉴스 후보를 자동 수집하고, Supabase에 섹션 단위로 저장한 뒤, 운영자가 검토·선정·보강하여 뉴스레터로 발행하는 semi-automated 운영 흐름을 구축했습니다.
   ], col: CY)
   #v(0.08cm)
   #overview-block("운영 아키텍처", [
-    #strong[미니앱(newsletter)]은 Vite 빌드 후 토스 콘솔에 `ait` 패키지를 업로드해 배포합니다.
-    #strong[관리자(newsletter-admin)]에서 섹션·뉴스레터를 검수·선정·보강·발행합니다.
-    n8n 워크플로우가 Gmail 특정 메일함에서 뉴스 후보를 수집하고, 관리자 섹션 API(`x-n8n-secret`)를 통해 Supabase(PostgreSQL)에 섹션 단위로 적재합니다.
+    #strong[미니앱(newsletter)]은 Vite 빌드 후 토스 콘솔에 `ait` 패키지를 업로드해 배포했습니다.
+    #strong[관리자(newsletter-admin)]에서 섹션·뉴스레터를 검수·선정·보강·발행했습니다.
+    n8n 워크플로우가 Gmail 특정 메일함에서 뉴스 후보를 수집하고, 관리자 섹션 API(`x-n8n-secret`)를 통해 Supabase(PostgreSQL)에 섹션 단위로 적재했습니다.
   ])
   #v(0.08cm)
   #overview-block("운영 현황", [
-    n8n 자동 수집 → DB 섹션 저장 → 운영자 검수·수정·보강 → 뉴스레터 발행까지 end-to-end 파이프라인이 동작 중입니다.
-    콘텐츠 보강은 AI가 아닌 운영자가 newsletter-admin에서 직접 수행합니다.
+    n8n 자동 수집 → DB 섹션 저장 → 운영자 검수·수정·보강 → 뉴스레터 발행까지 end-to-end 파이프라인을 구축·운영했습니다. 현재는 운영 종료 상태입니다.
+    콘텐츠 보강은 AI가 아닌 운영자가 newsletter-admin에서 직접 수행했습니다.
   ], col: CG)
 
   #sublabel("핵심 설계 포인트")
@@ -471,13 +469,13 @@
     column-gutter: 8pt,
     row-gutter: 8pt,
     block(fill: CL, stroke: 0.5pt + CB, radius: 5pt, inset: 9pt,
-      {text(size: 8.5pt, weight: "bold", "n8n 토픽 자동 수집"); v(0.05cm); text(size: 8pt, fill: CM, "Gmail 특정 메일함에서 뉴스레터 토픽 후보를 주기적으로 수집합니다.")}),
+      {text(size: 8.5pt, weight: "bold", "n8n 토픽 자동 수집"); v(0.05cm); text(size: 8pt, fill: CM, "Gmail 특정 메일함에서 뉴스레터 토픽 후보를 주기적으로 수집했습니다.")}),
     block(fill: CL, stroke: 0.5pt + CB, radius: 5pt, inset: 9pt,
-      {text(size: 8.5pt, weight: "bold", "섹션 단위 DB 저장"); v(0.05cm); text(size: 8pt, fill: CM, "Supabase에 텍스트·미디어 블록 단위 섹션으로 저장 후 조합 발행합니다.")}),
+      {text(size: 8.5pt, weight: "bold", "섹션 단위 DB 저장"); v(0.05cm); text(size: 8pt, fill: CM, "Supabase에 텍스트·미디어 블록 단위 섹션으로 저장 후 조합 발행했습니다.")}),
     block(fill: CL, stroke: 0.5pt + CB, radius: 5pt, inset: 9pt,
-      {text(size: 8.5pt, weight: "bold", "운영자 검수·보강"); v(0.05cm); text(size: 8pt, fill: CM, "자동 수집과 사람 검수를 분리해 콘텐츠 품질을 관리합니다.")}),
+      {text(size: 8.5pt, weight: "bold", "운영자 검수·보강"); v(0.05cm); text(size: 8pt, fill: CM, "자동 수집과 사람 검수를 분리해 콘텐츠 품질을 관리했습니다.")}),
     block(fill: CL, stroke: 0.5pt + CB, radius: 5pt, inset: 9pt,
-      {text(size: 8.5pt, weight: "bold", "토스 미니앱 배포"); v(0.05cm); text(size: 8pt, fill: CM, "AppsInToss(Granite) · TDS Mobile WebView, `ait build` 산출물을 토스 콘솔에 업로드해 실서비스 운영 중입니다.")}),
+      {text(size: 8.5pt, weight: "bold", "토스 미니앱 배포"); v(0.05cm); text(size: 8pt, fill: CM, "AppsInToss(Granite) · TDS Mobile WebView, `ait build` 산출물을 토스 콘솔에 업로드해 실서비스로 배포·운영했습니다. (현재 운영 종료)")}),
   )
 
   #sublabel("운영 아키텍처")
@@ -487,7 +485,7 @@
     radius: 6pt,
     inset: 8pt,
     fill: white,
-    image("./images/berita-arch.svg", width: 100%)
+    image("./images/berita-arch-typst.png", width: 100%)
   )
 
   #sublabel("기술 스택")
@@ -500,6 +498,49 @@
   #for t in ("Supabase", "PostgreSQL", "Edge Functions", "n8n", "newsletter-admin", "Gmail 연동") { tag(t, col: CA); h(3pt) }
 ]
 
+
+
+
+// ════════════════════════════════════════════════════════════════
+//  PROJECTS — Glamdog (three products)
+// ════════════════════════════════════════════════════════════════
+
+#v(0.2cm)
+#text(size: 8pt, fill: CA, weight: "bold")[프로젝트 3 · 글램독 (Glamdog)]
+
+#card[
+  #text(size: 11.5pt, weight: "bold")[글램독 — 고객 경험 · 운영 기반]
+  #v(0.05cm)
+  #text(size: 8.3pt, fill: CM)[
+    고객 문의, 예약 운영, 현장 안내라는 서로 다른 문제를 세 개의 독립된 제품으로 해결하고 있습니다.
+    Map은 양양점 현장에서 운영 중이며, 고객 안내 Bot은 베타 준비, CRM/PMS는 레거시 전환 개발 단계입니다.
+  ]
+
+  #v(0.12cm)
+  #sublabel("제품 현황")
+  #grid(
+    columns: (1fr, 1fr, 1fr),
+    column-gutter: 8pt,
+    block(fill: CL, stroke: 0.5pt + CB, radius: 5pt, inset: 9pt, {
+      text(size: 8pt, fill: CA, weight: "bold", "01 · 현장 안내"); v(0.05cm)
+      text(size: 8.5pt, weight: "bold", "Glamdog Map"); v(0.05cm)
+      text(size: 8pt, fill: CM, "시설 위치와 이용 안내를 현장 디스플레이에 통합해 투숙객의 다음 행동을 안내합니다."); v(0.08cm)
+      text(size: 7.5pt, fill: CG, weight: "bold", "양양점 현장 운영 중")
+    }),
+    block(fill: CL, stroke: 0.5pt + CB, radius: 5pt, inset: 9pt, {
+      text(size: 8pt, fill: CA, weight: "bold", "02 · 운영 코어"); v(0.05cm)
+      text(size: 8.5pt, weight: "bold", "Glamdog CRM/PMS"); v(0.05cm)
+      text(size: 8pt, fill: CM, "예약과 객실을 중심으로 체크인, 청소, 정산, 스케줄과 지점별 협업 데이터를 연결합니다."); v(0.08cm)
+      text(size: 7.5pt, fill: CY, weight: "bold", "레거시 전환 개발 중")
+    }),
+    block(fill: CL, stroke: 0.5pt + CB, radius: 5pt, inset: 9pt, {
+      text(size: 8pt, fill: CA, weight: "bold", "03 · 고객 접점"); v(0.05cm)
+      text(size: 8.5pt, weight: "bold", "Accommodation Bot"); v(0.05cm)
+      text(size: 8pt, fill: CM, "지점별 정책과 운영 정보를 근거로 고객 문의에 답하고, 필요한 경우 현장 상담으로 연결합니다."); v(0.08cm)
+      text(size: 7.5pt, fill: CY, weight: "bold", "양양점 베타 준비")
+    }),
+  )
+]
 
 // ════════════════════════════════════════════════════════════════
 //  EDUCATION & ETC (이력서 요약)
