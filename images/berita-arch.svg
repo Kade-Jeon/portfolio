@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 920 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="베리타 뉴스레터 운영 아키텍처">
+  <defs>
+    <marker id="berita-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#58a6ff"/>
+    </marker>
+    <marker id="berita-arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3fb950"/>
+    </marker>
+    <marker id="berita-arrow-yellow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#d29922"/>
+    </marker>
+    <marker id="berita-arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#bc8cff"/>
+    </marker>
+    <marker id="berita-arrow-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8b949e"/>
+    </marker>
+  </defs>
+
+  <rect width="920" height="400" fill="#161b22" rx="12"/>
+
+  <!-- 상단 요약 -->
+  <text x="460" y="22" fill="#8b949e" font-size="9" text-anchor="middle" font-family="system-ui,sans-serif">Gmail → n8n → 섹션 API → DB → 관리자 → ait build → 토스 미니앱</text>
+
+  <!-- 레인 구분선 -->
+  <line x1="110" y1="138" x2="760" y2="138" stroke="#30363d" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="110" y1="268" x2="760" y2="268" stroke="#30363d" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- 레인 라벨 -->
+  <text x="24" y="30" fill="#d29922" font-size="10" font-weight="700" font-family="system-ui,sans-serif">수집 · 자동화</text>
+  <text x="24" y="160" fill="#bc8cff" font-size="10" font-weight="700" font-family="system-ui,sans-serif">저장 · 검수</text>
+  <text x="24" y="290" fill="#3fb950" font-size="10" font-weight="700" font-family="system-ui,sans-serif">배포 · 서비스</text>
+
+  <!-- ===== Row 1: 수집 ===== -->
+  <rect x="130" y="48" width="96" height="68" rx="10" fill="#21262d" stroke="#d29922" stroke-width="1.5"/>
+  <text x="178" y="76" fill="#e6edf3" font-size="12" font-weight="700" text-anchor="middle" font-family="system-ui,sans-serif">Gmail</text>
+  <text x="178" y="92" fill="#8b949e" font-size="9" text-anchor="middle" font-family="system-ui,sans-serif">특정 메일함</text>
+  <text x="178" y="106" fill="#8b949e" font-size="9" text-anchor="middle" font-family="system-ui,sans-serif">토픽 후보</text>
+
+  <rect x="270" y="42" width="120" height="80" rx="10" fill="#21262d" stroke="#d29922" stroke-width="1.5"/>
+  <text x="330" y="72" fill="#e6edf3" font-size="12" font-weight="700" text-anchor="middle" font-family="system-ui,sans-serif">n8n</text>
+  <text x="330" y="88" fill="#8b949e" font-size="9" text-anchor="middle" font-family="system-ui,sans-serif">Windows PC</text>
+  <text x="330" y="102" fill="#8b949e" font-size="9" text-anchor="middle" font-family="system-ui,sans-serif">24시간 워크플로우</text>
+  <text x="330" y="116" fill="#d29922" font-size="9" text-anchor="middle" font-family="system-ui,sans-serif">자동 수집</text>
+
+  <rect x="434" y="42" width="156" height="80" rx="10" fill="#21262d" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="512" y="68" fill="#e6edf3" font-size="11" font-weight="700" text-anchor="middle" font-family="system-ui,sans-serif">Supabase Edge</text>
+  <text x="512" y="84" fill="#8b949e" font-size="8" text-anchor="middle" font-family="system-ui,sans-serif">create-newsletter-section</text>
+  <text x="512" y="98" fill="#8b949e" font-size="9" text-anchor="middle" font-family="system-ui,sans-serif">x-n8n-secret</text>
+  <text x="512" y="112" fill="#58a6ff" font-size="9" text-anchor="middle" font-family="system-ui,sans-serif">섹션 API</text>
+
+  <line x1="226" y1="82" x2="268" y2="82" stroke="#d29922" stroke-width="1.5" marker-end="url(#berita-arrow-yellow)"/>
+  <line x1="390" y1="82" x2="432" y2="82" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#berita-arrow)"/>
+
+  <!-- API → DB (수집 레인에서 저장 레인으로) -->
+  <line x1="512" y1="122" x2="512" y2="148" stroke="#58a6ff" stroke-width="1.5"/>
+  <line x1="512" y1="148" x2="248" y2="148" stroke="#58a6ff" stroke-width="1.5"/>
+  <line x1="248" y1="148" x2="248" y2="162" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#berita-arrow)"/>
+
+  <!-- ===== Row 2: 저장 · 검수 ===== -->
+  <rect x="168" y="162" width="160" height="88" rx="10" fill="#21262d" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="248" y="192" fill="#e6edf3" font-size="12" font-weight="700" text-anchor="middle" font-family="system-ui,sans-serif">PostgreSQL</text>
+  <text x="248" y="208" fill="#8b949e" font-size="9" text-anchor="middle" font-family="system-ui,sans-serif">Supabase</text>
+  <text x="248" y="222" fill="#8b949e" font-size="9" text-anchor="middle" font-family="system-ui,sans-serif">섹션 단위 저장</text>
+  <text x="248" y="236" fill="#58a6ff" font-size="9" text-anchor="middle" font-family="system-ui,sans-serif">텍스트 · 미디어 블록</text>
+
+  <rect x="408" y="162" width="200" height="88" rx="10" fill="#21262d" stroke="#bc8cff" stroke-width="1.5"/>
+  <text x="508" y="188" fill="#e6edf3" font-size="12" font-weight="700" text-anchor="middle" font-family="system-ui,sans-serif">newsletter-admin</text>
+  <text x="508" y="204" fill="#8b949e" font-size="9" text-anchor="middle" font-family="system-ui,sans-serif">섹션 검수 · 선정</text>
+  <text x="508" y="218" fill="#bc8cff" font-size="9" text-anchor="middle" font-family="system-ui,sans-serif">운영자 직접 수정 · 보강</text>
+  <text x="508" y="232" fill="#8b949e" font-size="9" text-anchor="middle" font-family="system-ui,sans-serif">뉴스레터 발행</text>
+  <text x="508" y="246" fill="#bc8cff" font-size="8" text-anchor="middle" font-family="system-ui,sans-serif">semi-automated</text>
+
+  <!-- DB ↔ Admin (저장·검수 레인 내부) -->
+  <line x1="328" y1="206" x2="406" y2="206" stroke="#bc8cff" stroke-width="1.5" marker-end="url(#berita-arrow-purple)"/>
+  <line x1="406" y1="214" x2="328" y2="214" stroke="#8b949e" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#berita-arrow-muted)"/>
+
+  <!-- Admin → 배포 레인 -->
+  <line x1="508" y1="250" x2="508" y2="268" stroke="#3fb950" stroke-width="1.5"/>
+  <line x1="508" y1="268" x2="168" y2="268" stroke="#3fb950" stroke-width="1.5"/>
+  <line x1="168" y1="268" x2="168" y2="292" stroke="#3fb950" stroke-width="1.5" marker-end="url(#berita-arrow-green)"/>
+
+  <!-- ===== Row 3: 배포 · 서비스 ===== -->
+  <rect x="108" y="292" width="120" height="72" rx="10" fill="#21262d" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="168" y="322" fill="#e6edf3" font-size="11" font-weight="700" text-anchor="middle" font-family="system-ui,sans-serif">newsletter</text>
+  <text x="168" y="338" fill="#8b949e" font-size="9" text-anchor="middle" font-family="system-ui,sans-serif">React / Granite</text>
+  <text x="168" y="352" fill="#3fb950" font-size="9" text-anchor="middle" font-family="system-ui,sans-serif">ait build</text>
+
+  <rect x="268" y="292" width="112" height="72" rx="10" fill="#21262d" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="324" y="322" fill="#e6edf3" font-size="11" font-weight="700" text-anchor="middle" font-family="system-ui,sans-serif">토스 콘솔</text>
+  <text x="324" y="338" fill="#8b949e" font-size="9" text-anchor="middle" font-family="system-ui,sans-serif">ait 업로드</text>
+  <text x="324" y="352" fill="#8b949e" font-size="9" text-anchor="middle" font-family="system-ui,sans-serif">배포</text>
+
+  <rect x="420" y="292" width="128" height="72" rx="10" fill="#21262d" stroke="#3182F6" stroke-width="1.5"/>
+  <text x="484" y="322" fill="#e6edf3" font-size="12" font-weight="700" text-anchor="middle" font-family="system-ui,sans-serif">베리타</text>
+  <text x="484" y="338" fill="#8b949e" font-size="9" text-anchor="middle" font-family="system-ui,sans-serif">토스 미니앱</text>
+  <text x="484" y="352" fill="#58a6ff" font-size="9" text-anchor="middle" font-family="system-ui,sans-serif">TDS Mobile</text>
+
+  <rect x="588" y="292" width="120" height="72" rx="10" fill="#21262d" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="648" y="322" fill="#e6edf3" font-size="12" font-weight="700" text-anchor="middle" font-family="system-ui,sans-serif">토스 사용자</text>
+  <text x="648" y="338" fill="#8b949e" font-size="9" text-anchor="middle" font-family="system-ui,sans-serif">미니앱 검색</text>
+  <text x="648" y="352" fill="#8b949e" font-size="9" text-anchor="middle" font-family="system-ui,sans-serif">뉴스레터 열람</text>
+
+  <line x1="228" y1="328" x2="266" y2="328" stroke="#3fb950" stroke-width="1.5" marker-end="url(#berita-arrow-green)"/>
+  <line x1="380" y1="328" x2="418" y2="328" stroke="#3fb950" stroke-width="1.5" marker-end="url(#berita-arrow-green)"/>
+  <line x1="548" y1="328" x2="586" y2="328" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#berita-arrow)"/>
+
+  <!-- 범례 -->
+  <rect x="748" y="44" width="148" height="96" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="822" y="64" fill="#8b949e" font-size="9" font-weight="700" text-anchor="middle" font-family="system-ui,sans-serif">범례</text>
+  <circle cx="768" cy="78" r="4" fill="#d29922"/>
+  <text x="780" y="82" fill="#8b949e" font-size="8" font-family="system-ui,sans-serif">자동 수집</text>
+  <circle cx="768" cy="94" r="4" fill="#bc8cff"/>
+  <text x="780" y="98" fill="#8b949e" font-size="8" font-family="system-ui,sans-serif">운영자 검수</text>
+  <circle cx="768" cy="110" r="4" fill="#3fb950"/>
+  <text x="780" y="114" fill="#8b949e" font-size="8" font-family="system-ui,sans-serif">배포 · 서비스</text>
+  <circle cx="768" cy="126" r="4" fill="#58a6ff"/>
+  <text x="780" y="130" fill="#8b949e" font-size="8" font-family="system-ui,sans-serif">API · 데이터</text>
+</svg>
