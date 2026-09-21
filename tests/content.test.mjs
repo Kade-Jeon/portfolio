@@ -199,29 +199,45 @@ test('Berita is clearly marked as a past project', () => {
   assert.doesNotMatch(berita, /모바일에서만 이용 가능/);
 });
 
-test('site nav does not expose FDE/SW position links', () => {
+test('home nav: no FDE, no SW', () => {
   const nav = html.match(/<nav class="site-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
   assert.ok(nav, 'homepage site-nav missing');
   assert.doesNotMatch(nav, />\s*FDE\s*</);
   assert.doesNotMatch(nav, />\s*SW\s*</);
   assert.doesNotMatch(nav, /href="\.\/fde\/"/);
   assert.doesNotMatch(nav, /href="\.\/sw\/"/);
+  for (const label of ['소개', '경력', '글램독', '프로젝트', '기술', '연락처']) {
+    assert.ok(nav.includes(label), `home nav missing section: ${label}`);
+  }
 });
 
-test('position pages remain reachable and only link home in top nav', () => {
+test('fde page: has section nav, no SW link, no /sw/', () => {
   const fde = readFileSync(new URL('../fde/index.html', import.meta.url), 'utf8');
-  const sw = readFileSync(new URL('../sw/index.html', import.meta.url), 'utf8');
   assert.ok(existsSync(fileURLToPath(new URL('../fde/index.html', import.meta.url))));
-  assert.ok(existsSync(fileURLToPath(new URL('../sw/index.html', import.meta.url))));
-  for (const [name, page] of [['fde', fde], ['sw', sw]]) {
-    const nav = page.match(/<nav class="site-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
-    assert.ok(nav, `${name} site-nav missing`);
-    assert.match(nav, /href="\.\.\/"/);
-    assert.match(nav, />홈</);
-    assert.doesNotMatch(nav, />\s*FDE\s*</);
-    assert.doesNotMatch(nav, />\s*SW\s*</);
-    assert.doesNotMatch(nav, /href="\.\.\/fde\/"/);
-    assert.doesNotMatch(nav, /href="\.\.\/sw\/"/);
+  const nav = fde.match(/<nav class="site-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
+  assert.ok(nav, 'fde site-nav missing');
+  assert.match(nav, /href="\.\.\/"/);
+  assert.match(nav, />홈</);
+  for (const label of ['소개', '경력', '글램독', '프로젝트', '기술', '연락처']) {
+    assert.ok(nav.includes(label), `fde nav missing section: ${label}`);
   }
+  assert.doesNotMatch(nav, />\s*SW\s*</);
+  assert.doesNotMatch(nav, /href="[^"]*\/sw\/?["#]/);
+  assert.doesNotMatch(nav, /\.\.\/sw\//);
+});
+
+test('sw page: has section nav, no FDE link, no /fde/', () => {
+  const sw = readFileSync(new URL('../sw/index.html', import.meta.url), 'utf8');
+  assert.ok(existsSync(fileURLToPath(new URL('../sw/index.html', import.meta.url))));
+  const nav = sw.match(/<nav class="site-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
+  assert.ok(nav, 'sw site-nav missing');
+  assert.match(nav, /href="\.\.\/"/);
+  assert.match(nav, />홈</);
+  for (const label of ['소개', '경력', '글램독', '프로젝트', '기술', '연락처']) {
+    assert.ok(nav.includes(label), `sw nav missing section: ${label}`);
+  }
+  assert.doesNotMatch(nav, />\s*FDE\s*</);
+  assert.doesNotMatch(nav, /href="[^"]*\/fde\/?["#]/);
+  assert.doesNotMatch(nav, /\.\.\/fde\//);
 });
 
