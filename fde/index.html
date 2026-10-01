@@ -66,7 +66,7 @@
             </div>
             <ul class="glamdog-strip__statuses">
               <li><strong>Glamdog Map</strong><span>양양점 현장 운영 중</span></li>
-              <li><strong>Glamdog CRM/PMS</strong><span>레거시 전환 개발 중</span></li>
+              <li><strong>PMS 연동</strong><span>파트너센터 데이터 직접 연동</span></li>
               <li><strong>Accommodation Bot</strong><span>양양점 베타 준비</span></li>
             </ul>
           </div>
@@ -109,7 +109,7 @@
             </article>
             <article class="card">
               <h3>관측성 · 운영 구조 개선</h3>
-              <p>KISTI 프라이빗 클라우드에 ELK/Fleet/APM을 구축해 VM별 root 접속 로그를 확인하던 방식에서 Kibana로 한곳에서 조회하는 방식으로 바꿨습니다. 문의 대응 시간 약 30% 감소(체감 기준).</p>
+              <p>KISTI 프라이빗 클라우드에 ELK/Fleet/APM을 구축해 VM별 root 접속 로그를 확인하던 방식에서 Kibana로 한곳에서 조회하는 방식으로 바꿨습니다. Kibana에서 바로 로그를 보게 되고 느린 쿼리도 고치면서 문의 대응 시간이 약 30% 줄었습니다(체감 기준).</p>
               <ul>
                 <li>Admin/Readonly 권한 분리로 로그 접근 보안 개선</li>
                 <li>APM Slow Query로 SQL 조건 개선</li>
@@ -123,7 +123,7 @@
         <div class="shell">
           <div class="section-head">
             <h2>고객 문제를 제품 개선으로 이어 온 사례</h2>
-            <p>고객을 만나는 일부터 시연까지, 해 온 일을 사례로 정리했습니다.</p>
+            <p>고객 요청을 받는 일부터 개발·시연까지, 해 온 일을 사례로 정리했습니다.</p>
           </div>
           <div class="proof-grid">
             <article class="proof">
@@ -141,6 +141,16 @@
               <h3>공공 메일 AI 기능 시연</h3>
               <p>회사 Java/Spring 스택에 맞춰 Spring AI로 PoC를 만들어 AI × Softwave 2025에서 <a href="https://v.daum.net/v/Bn14HnMVOt?f=p" target="_blank" rel="noopener noreferrer">시연</a>했습니다.</p>
             </article>
+            <article class="proof">
+              <p class="proof__label">Field project</p>
+              <h3>글램독 — 현장에서 문제를 찾고 직접 해결</h3>
+              <p>지인의 반려견 숙박업(6개 지점)을 돕는 무보수 개인 프로젝트입니다. 현장을 오가며 불편을 직접 찾았고, 내보내기·API가 없는 숙박 플랫폼 파트너센터의 네트워크 요청을 분석해 PMS에 직접 연동했습니다. 전화 문의를 줄이려 지점 정보로만 답하는 챗봇(Next.js·React·Supabase·Vercel)도 베타 준비 중이고, 창고의 남는 TV에 띄운 안내 Map으로 종이 안내문을 대체했습니다.</p>
+            </article>
+            <article class="proof">
+              <p class="proof__label">Security</p>
+              <h3>CSAP Linux 서버 점검</h3>
+              <p>KT Cloud·NCP 공공 클라우드에서 CSAP 기준에 맞춰 Linux 서버를 점검·보완했습니다. SSH·접근 설정, 포트·방화벽, 패스워드 정책, 권한, 로그 설정을 확인하고 부족한 부분을 채웠습니다.</p>
+            </article>
           </div>
         </div>
       </section>
@@ -153,9 +163,9 @@
           </div>
           <div class="timeline">
             <article>
-              <p class="timeline__meta"><span>2024.05 – 2026.01</span><span>크리니티 · 클라우드개발1팀</span></p>
-              <h3>웹개발자 · 고객사 요구사항·운영 이슈</h3>
-              <p>Java/JSP 메일 서비스 기능 개발·유지보수, 13개 CS 채널 대응, SMS/MMS API 재구현, 결과 내 재검색, ELK/APM, Spring AI PoC를 수행했습니다.</p>
+              <p class="timeline__meta"><span>2024.05 – 2026.01</span><span>크리니티 · 클라우드개발팀(4인)</span></p>
+              <h3>백엔드 개발자(연구원) · 고객사 요구사항·운영 이슈</h3>
+              <p>Java/JSP 메일 서비스 기능 개발·유지보수, 13개 CS 채널 대응, 한국농수산식품유통공사 요청 SMS→MMS 확장, 결과 내 재검색, ELK/APM, Spring AI PoC(다국어 번역·초안 작성·메일 요약·첨부파일 요약), CSAP Linux 서버 점검을 수행했습니다.</p>
             </article>
             <article>
               <p class="timeline__meta"><span>2021.05 – 2023.03</span><span>한국학술정보 · KISS사업부</span></p>
@@ -184,9 +194,12 @@
             <span>Docker</span>
             <span>RestTemplate / API 연동</span>
             <span>Linux</span>
+            <span>KT Cloud · NCP</span>
+            <span>Next.js / React / Supabase</span>
             <span>고객 CS 대응</span>
             <span>TOEIC 835</span>
           </div>
+          <p class="stack-note">AI 코딩 도구: Cursor, Codex(ChatGPT), Antigravity</p>
         </div>
       </section>
 
