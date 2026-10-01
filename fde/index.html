@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="CS·고객 전달·이해관계자 조율과 PoC→NIA 도입 경험을 갖춘 Forward Deployed Engineer 포지션 포트폴리오 — 전총명(Kade Jeon)" />
+    <meta name="description" content="CS·고객 전달·이해관계자 조율과 Spring AI PoC 시연 경험을 갖춘 Forward Deployed Engineer 포지션 포트폴리오 — 전총명(Kade Jeon)" />
     <title>전총명 | Forward Deployed Engineer</title>
     <link rel="stylesheet" href="../position-pages.css" />
   </head>
@@ -33,14 +33,14 @@
             고객의 문제를 듣고<br />
             <strong>제품으로 풀어냅니다</strong>
           </h1>
-          <p class="hero__summary">영업·CS 현장에서 고객과 조율해 온 경험에, 메일 서비스 개선·관측성 구축·Spring AI PoC(NIA 도입) 경험을 더해 FDE로 일하고 싶습니다.</p>
+          <p class="hero__summary">영업·CS 현장에서 고객과 조율해 온 경험에, 메일 서비스 개선·관측성 구축·Spring AI PoC 경험을 더해 FDE로 일하고 싶습니다.</p>
           <div class="hero__actions">
             <a class="button button--primary" href="#fit">포지션 핏</a>
             <a class="button" href="#proof">근거 사례</a>
           </div>
           <div class="chip-row">
             <span class="chip">Customer delivery</span>
-            <span class="chip">PoC adoption</span>
+            <span class="chip">PoC demo</span>
             <span class="chip">ELK/APM</span>
             <span class="chip">TOEIC 835</span>
           </div>
@@ -50,8 +50,8 @@
           <ul>
               <li><strong>CS → 제품</strong><span>13개 CS 채널 대응을 기능·구조 개선으로 연결</span></li>
               <li><strong>Stakeholder</strong><span>솔루션·해외영업 기반의 요구사항 정리·일정 조율</span></li>
-              <li><strong>PoC → 도입</strong><span>Spring AI PoC가 G-Cloud 채택·NIA 베타 도입</span></li>
-              <li><strong>Observability</strong><span>ELK/APM으로 장애·CS 대응 시간 약 30% 수준으로 단축</span></li>
+              <li><strong>PoC → 시연</strong><span>Spring AI PoC를 AI × Softwave 2025에서 G-Cloud 공공메일 AI 기능으로 시연</span></li>
+              <li><strong>Observability</strong><span>ELK/APM으로 문의 대응 시간 약 30% 감소(체감 기준)</span></li>
           </ul>
         </aside>
       </header>
@@ -79,7 +79,7 @@
             <h2>왜 FDE를 하려는가</h2>
             <p>
               영업·CS에서 고객 요구를 듣는 일로 시작해, 개발을 통해 제품을 개선하는 일까지 해 왔습니다.
-              고객의 문제를 이해하고 관계자를 조율하며 PoC를 실제 도입까지 이어 온 경험이 FDE 업무와 잘 맞는다고 생각합니다.
+              고객의 문제를 이해하고 관계자를 조율하며 PoC를 시연까지 이어 온 경험이 FDE 업무와 잘 맞는다고 생각합니다.
             </p>
           </div>
           <div class="card-grid">
@@ -100,16 +100,16 @@
               </ul>
             </article>
             <article class="card">
-              <h3>PoC → NIA 도입</h3>
-              <p>Spring AI로 공공 메일 AI 기능 PoC를 직접 설계하고 구현했습니다. G-Cloud 공공 클라우드 메일 AI 기능 PoC로 채택된 뒤 한국지능정보사회진흥원(NIA) 베타 운영 환경에 도입됐습니다.</p>
+              <h3>PoC → 시연</h3>
+              <p>Spring AI로 공공 메일 AI 기능 PoC를 직접 구현했습니다. 다국어 번역, 초안 작성, 메일 요약, 첨부파일 요약 기능을 만들어 AI × Softwave 2025(2025.12, 코엑스)에서 G-Cloud 공공메일 AI 기능으로 <a href="https://v.daum.net/v/Bn14HnMVOt?f=p" target="_blank" rel="noopener noreferrer">시연</a>했습니다.</p>
               <ul>
-                <li>RestTemplate 단일 프롬프트 한계를 ChatClient 구조로 전환</li>
-                <li>RAG·에이전트·Langfuse 확장 가능 구조 설계</li>
+                <li>기존 RestTemplate 단일 프롬프트 구조를 Spring AI로 전환</li>
+                <li>다국어 번역·초안 작성·메일 요약·첨부파일 요약 직접 구현</li>
               </ul>
             </article>
             <article class="card">
               <h3>관측성 · 운영 구조 개선</h3>
-              <p>KISTI 프라이빗 클라우드에 ELK/Fleet/APM을 구축해 VM별 root 접속 로그를 확인하던 방식에서 Kibana로 한곳에서 조회하는 방식으로 바꿨습니다. 장애·CS 대응 시간도 기존의 약 30% 수준으로 줄였습니다.</p>
+              <p>KISTI 프라이빗 클라우드에 ELK/Fleet/APM을 구축해 VM별 root 접속 로그를 확인하던 방식에서 Kibana로 한곳에서 조회하는 방식으로 바꿨습니다. 문의 대응 시간 약 30% 감소(체감 기준).</p>
               <ul>
                 <li>Admin/Readonly 권한 분리로 로그 접근 보안 개선</li>
                 <li>APM Slow Query로 SQL 조건 개선</li>
@@ -123,7 +123,7 @@
         <div class="shell">
           <div class="section-head">
             <h2>고객 문제를 제품 개선으로 이어 온 사례</h2>
-            <p>고객을 만나는 일부터 실제 도입까지, 해 온 일을 사례로 정리했습니다.</p>
+            <p>고객을 만나는 일부터 시연까지, 해 온 일을 사례로 정리했습니다.</p>
           </div>
           <div class="proof-grid">
             <article class="proof">
@@ -137,9 +137,9 @@
               <p>TOEIC 835점, 태국 인턴·필리핀 어학·캄보디아 봉사 등 해외 경험을 바탕으로 글로벌 이해관계자와의 소통에 익숙합니다.</p>
             </article>
             <article class="proof">
-              <p class="proof__label">Adoption</p>
-              <h3>공공 환경 PoC 채택</h3>
-              <p>회사 Java/Spring 스택에 맞춰 Spring AI로 PoC를 만들었고, NIA 베타 환경까지 도입됐습니다.</p>
+              <p class="proof__label">Demo</p>
+              <h3>공공 메일 AI 기능 시연</h3>
+              <p>회사 Java/Spring 스택에 맞춰 Spring AI로 PoC를 만들어 AI × Softwave 2025에서 <a href="https://v.daum.net/v/Bn14HnMVOt?f=p" target="_blank" rel="noopener noreferrer">시연</a>했습니다.</p>
             </article>
           </div>
         </div>
