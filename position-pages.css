@@ -564,6 +564,12 @@ footer.shell {
 .proof li { color: var(--ink-soft); font-size: 0.88rem; }
 .timeline li { color: var(--ink-soft); font-size: 0.92rem; }
 
+/* FDE hero title: 2 lines at desktop */
+.hero h1:has(br) {
+  max-width: none;
+  font-size: clamp(2.4rem, 4.2vw, 3.4rem);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
